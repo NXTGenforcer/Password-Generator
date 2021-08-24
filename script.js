@@ -3,6 +3,7 @@ var generateBtn = document.querySelector("#generate");
 var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p','q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var upper = ['A','B','C','D','E','F','G','H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X','Y','Z'];
 var special = [';', '!','$', '#', '%', '*', '^'];
+var number = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 var userChoiceArray=[];
 
 
@@ -13,6 +14,7 @@ function writePassword() {
   var lowerCaseChoice = confirm('Would you like lowercase letters in your password?')
   var upperChoice = confirm('Would you like Uppercase letters in your password?')
   var specialChoice = confirm('Would you like special characters in your password?') 
+  var numberChoice = confirm('Would you like numbers in your password?')
   if(userChoice){
     console.log(userChoice)
   } else if(!userChoice){
@@ -29,6 +31,9 @@ function writePassword() {
   if(specialChoice === true){
     userChoiceArray = userChoiceArray.concat(special)
   } 
+  if(numberChoice === true){
+    userChoiceArray = userChoiceArray.concat(number)
+  }
   var password = []
   for(var i = 0; i < userChoice; i++){
     var randomIndex = Math.floor(Math.random() * userChoiceArray.length) 
